@@ -1,0 +1,32 @@
+# Java compiled files
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# VSCode
+.vscode/
+.history/
+.idea/
+
+# MacOS
+.DS_Store
+
+# Java build directories
+/bin/
+/build/
+/out/
+/target/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# OS generated
+Thumbs.db
