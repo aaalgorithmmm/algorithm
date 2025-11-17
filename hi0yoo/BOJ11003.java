@@ -1,6 +1,10 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * 핵심 : 자료구조
+ * <p>Deque 사용법 익히기</p>
+ */
 public class BOJ11003 {
 
     public static void main(String[] args) throws Exception {
