@@ -21,7 +21,7 @@ import java.util.StringTokenizer;
  *
  * 3) 큐의 맨 앞은 항상 현재 윈도우의 최솟값이 된다.
  */
-public class Main {
+public class BOJ_11003_최솟값찾기 {
   static FastReader scan = new FastReader();
   static StringBuilder sb = new StringBuilder();
   public static void main(String[] args) {
