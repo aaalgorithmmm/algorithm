@@ -37,10 +37,25 @@ public class BOJ1717 {
             this.map = IntStream.range(0, size + 1).toArray();
         }
 
+        /**
+         * <h3>union</h3>
+         * a 노드가 속한 그룹과 b 노드가 속한 그룹을 합친다.</br>
+         * b 노드의 대표 노드가 a 노드의 대표 노드를 가리키도록 한다.
+         *
+         * @param a 노드 번호
+         * @param b 노드 번호
+         */
         public void union(int a, int b) {
             map[find(b)] = map[find(a)];
         }
 
+        /**
+         * <h3>find</h3>
+         * 특정 노드가 속한 그룹의 대표 노드 번호를 찾는다.
+         *
+         * @param k 대표노드를 찾을 노드 번호
+         * @return k 노드가 속한 그룹의 대표 노드 번호
+         */
         public int find(int k) {
             int cur = k;
             while (map[cur] != cur) {
