@@ -1,9 +1,6 @@
 package dag;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class DAG {
     private final List<List<Integer>> adj;
@@ -38,10 +35,13 @@ public class DAG {
     public List<Integer> getSortedNodes() {
         List<Integer> result = new ArrayList<>();
 
+        // 차수를 복사하여 사용한다.
+        int[] copiedIndegrees = Arrays.copyOf(indegrees, indegrees.length);
+
         // 차수가 0인 노드부터 방문한다.
         Queue<Integer> queue = new LinkedList<>();
         for (int i = 0; i < adj.size(); i++) {
-            if (indegrees[i] == 0) queue.add(i);
+            if (copiedIndegrees[i] == 0) queue.add(i);
         }
 
         while (!queue.isEmpty()) {
@@ -50,10 +50,10 @@ public class DAG {
 
             // 현재 노드에서 갈 수 있는 다음 노드를 방문한다. (해당 노드의 차수를 깎는다)
             for (Integer nextNode : adj.get(node)) {
-                indegrees[nextNode]--; // 방문
+                copiedIndegrees[nextNode]--; // 방문
 
                 // 차수가 0이 되었으면 다음 방문으로 넣는다.
-                if (indegrees[nextNode] == 0) queue.add(nextNode);
+                if (copiedIndegrees[nextNode] == 0) queue.add(nextNode);
             }
         }
 
