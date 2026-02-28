@@ -3,7 +3,7 @@
 import java.util.*;
 import java.io.*;
 
-class Node implements Comparable<Node> {
+class Node implemegnts Comparable<Node> {
     int nodeNum;
     int distance;
 
