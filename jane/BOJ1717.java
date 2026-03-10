@@ -37,8 +37,8 @@ public static int find(int a) {
     else return parent[a] = find(parent[a]); 
 }
 
-public static boolean checksame(int a, int b){
-    a= find(a);
+public static boolean checkSame(int a, int b){
+    a = find(a);
     b = find(b);
     if (a = b) {
         return true; 
