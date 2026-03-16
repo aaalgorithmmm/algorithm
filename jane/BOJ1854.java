@@ -1,10 +1,13 @@
+import java.util.*;
+import java.io.*;
+
 public class Main{
     static final int INF = 100000000;
     public static void main(String[] args) throws IOException{
         int N, M, K;
         int[][] W = new int[1001][1001];
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
@@ -23,6 +26,7 @@ public class Main{
             st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
+            int c = Integer.parseInt(st.nextToken());
             W[a][b] = c;
         }
         PriorityQueue<Node> pq = new PriorityQueue<>();
@@ -37,15 +41,15 @@ public class Main{
                         pq.add(new Node(adjNode, u.cost + W[u.node][adjNode]));
                     }
                     // 저장된 경로가 k 개, 현재 가장 큰 값 보다 작을 때만 추가
-                    else if (distQueue[adjNode].peek() > us.cost + W[u.node][adjNode]){
+                    else if (distQueue[adjNode].peek() > u.cost + W[u.node][adjNode]){
                         distQueue[adjNode].poll();
                         distQueue[adjNode].add(u.cost + W[u.node][adjNode]);
-                        pq.add(new Node(adjNode, u.cost + W[u.node[adjNode]]));
+                        pq.add(new Node(adjNode, u.cost + W[u.node][adjNode]));
                     }
                 }
             }
         }
-        for(int i = 1; i< = N; i ++){
+        for(int i = 1; i<= N; i ++){
             if(distQueue[i].size() == K){
                 bw.write(distQueue[i].peek() + "\n");
             }else{
@@ -67,6 +71,6 @@ class Node implements Comparable<Node>{
     }
     @Override
     public int compareTo(Node o){
-        return this.cost < o.cost ? -1 : 1;
+        return this.cost < o.cost ? -1: 1;
     }
 }
