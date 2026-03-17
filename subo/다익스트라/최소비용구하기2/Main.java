@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-/*
+/* BOJ 11779 최소비용 구하기 2
   [챕터 1. 문제 핵심]
   다익스트라는 음수 없는 가중치 그래프에서 단일 시작점 최단거리를 구하는 알고리즘이다.
   이 문제는 최단거리뿐 아니라 실제 경로까지 출력해야 하므로 prev 배열이 추가로 필요하다.

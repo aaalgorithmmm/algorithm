@@ -31,7 +31,7 @@ public class Main {
       for (Edge e : edges) {
         if (dist[e.from] == INF)
           continue; // 1에서 e.from까지 도달 불가
-        long cand = dist[e.from] + e.w;
+        long cand = dist[e.from] + e.weight;
         if (cand < dist[e.to]) {
           dist[e.to] = cand;
           updated = true;
@@ -45,7 +45,7 @@ public class Main {
     for (Edge e : edges) {
       if (dist[e.from] == INF)
         continue;
-      long cand = dist[e.from] + e.w;
+      long cand = dist[e.from] + e.weight;
       if (cand < dist[e.to]) {
         System.out.print("-1");
         return;
