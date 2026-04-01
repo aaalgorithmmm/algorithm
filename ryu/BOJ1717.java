@@ -1,4 +1,4 @@
-// BOJ1717 집합표현하기
+// BOJ1717 집합표현하기 (유니온 파인드)
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
