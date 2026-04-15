@@ -4,7 +4,6 @@ import java.util.*;
 import java.io.*;
 
 class Main {
-    // 함수들이 같이 써야 하는 변수는 static으로 빼주는 게 편합니다.
     static int height;
     static int[] nodeList;
     static List<Integer>[] result;
