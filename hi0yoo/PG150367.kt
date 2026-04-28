@@ -2,7 +2,7 @@
  * # 표현 가능한 이진트리
  * - https://school.programmers.co.kr/learn/courses/30/lessons/150367?language=kotlin
  */
-class Solution {
+class PG150367 {
     fun solution(numbers: LongArray): IntArray {
         val answer = IntArray(numbers.size)
 
